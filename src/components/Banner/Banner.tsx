@@ -17,12 +17,14 @@
  * - whileInView ensures animations only trigger when visible (performance optimization)
  */
 
-// eslint-disable-next-line no-unused-vars
 import BannerImg from "../../assets/3.png";
 import { motion } from "framer-motion";
 import { slideUp } from "../../utility/animation";
 
-const Banner = () => {
+/**
+ * Banner Component - Marketing Banner Section
+ */
+const Banner = (): JSX.Element => {
   return (
     <>
       <div className="container py-20">
@@ -94,7 +96,7 @@ const Banner = () => {
                 delay: 0.5, // Start after 0.5s delay
               }}
               src={BannerImg}
-              alt=""
+              alt="Design and innovation illustration"
               className="w-[90%] md:w-[550px] xl:w-[600px] md:!scale-125"
             />
           </div>

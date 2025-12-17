@@ -18,10 +18,10 @@
  * - React Icons for consistent, scalable social media icons
  */
 
-// eslint-disable-next-line no-unused-vars
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import FooterImg from "../../assets/5.png";
 import { motion } from "framer-motion";
+import { CSSProperties } from "react";
 
 /**
  * Background Style Configuration
@@ -30,14 +30,17 @@ import { motion } from "framer-motion";
  * This approach is used when you need dynamic values (like image URLs) in styles.
  * Alternative: Could use CSS background-image with CSS variables, but inline works well here.
  */
-const bgStyle = {
+const bgStyle: CSSProperties = {
   backgroundImage: `url(${FooterImg})`, // Dynamic image URL from import
   backgroundRepeat: "no-repeat", // Single image, don't repeat
   backgroundSize: "cover", // Cover entire container
   backgroundPosition: "center", // Center the image
 };
 
-const Email = () => {
+/**
+ * Email Component - Newsletter Subscription & Social Links Footer
+ */
+const Email = (): JSX.Element => {
   return (
     <div style={bgStyle}>
       {/* Animated container with scale effect (zooms in when scrolled into view) */}

@@ -87,7 +87,7 @@ export function useFeedbackQuery(): UseFeedbackQueryReturn {
   const query = useQuery({
     queryKey: ["feedbacks"], // Cache key - used for invalidation
     queryFn: fetchFeedbacks, // Function to fetch data
-    // staleTime and cacheTime are set to Infinity in queryClient config
+    // staleTime and gcTime are set to Infinity in queryClient config
   });
 
   // Filter data based on search query param

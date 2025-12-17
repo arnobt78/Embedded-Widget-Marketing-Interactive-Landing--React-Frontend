@@ -21,14 +21,16 @@
  * - "Learn More" link
  */
 
-// eslint-disable-next-line no-unused-vars
 import Img1 from "../../assets/icon/1.png";
 import Img2 from "../../assets/icon/2.png";
 import Img3 from "../../assets/icon/3.png";
 import { slideUp } from "../../utility/animation";
 import { motion } from "framer-motion";
 
-const Cards = () => {
+/**
+ * Cards Component - Feature Cards Grid
+ */
+const Cards = (): JSX.Element => {
   return (
     <>
       {/* Background section for visual separation */}
@@ -47,7 +49,7 @@ const Cards = () => {
               {/* Icon with circular black background */}
               <img
                 src={Img1}
-                alt=""
+                alt="About icon"
                 className="w-16 h-16 rounded-full object-contain p-3 bg-black"
               />
               <p className="text-xl font-semibold">About</p>
@@ -68,7 +70,7 @@ const Cards = () => {
             >
               <img
                 src={Img2}
-                alt=""
+                alt="Connection icon"
                 className="w-16 h-16 rounded-full object-contain p-3 bg-black"
               />
               <p className="text-xl font-semibold">Connection</p>
@@ -89,7 +91,7 @@ const Cards = () => {
             >
               <img
                 src={Img3}
-                alt=""
+                alt="Plugin icon"
                 className="w-16 h-16 rounded-full object-contain p-3 bg-black"
               />
               <p className="text-xl font-semibold">Plugin</p>

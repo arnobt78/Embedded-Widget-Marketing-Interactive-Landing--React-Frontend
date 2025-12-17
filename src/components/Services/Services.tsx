@@ -15,11 +15,13 @@
  * - Each card contains icon, title, and description
  */
 
-// eslint-disable-next-line no-unused-vars
 import ServiceImg from "../../assets/2.png";
 import { motion } from "framer-motion";
 
-const Services = () => {
+/**
+ * Services Component - Features/Services Showcase Section
+ */
+const Services = (): JSX.Element => {
   return (
     <>
       <div className="container py-12">
@@ -53,7 +55,7 @@ const Services = () => {
           >
             <img
               src={ServiceImg}
-              alt=""
+              alt="Creative classes and learning illustration"
               className="w-[300px] mx-auto md:max-w-[500px]"
             />
           </motion.div>
@@ -64,7 +66,7 @@ const Services = () => {
             transition={{ duration: 0.5, delay: 0.4 }} // 0.4s delay (second)
             className="max-w-[300px] mx-auto space-y-4"
           >
-            <img src={ServiceImg} alt="" className="w-14" />
+            <img src={ServiceImg} alt="Service icon" className="w-14" />
             <p className="uppercase font-semibold text-xl">Learn By doing</p>
             <p className="text-gray-500 pl-6 border-l-2">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -80,7 +82,7 @@ const Services = () => {
             transition={{ duration: 0.5, delay: 0.6 }} // 0.6s delay (third)
             className="max-w-[300px] mx-auto space-y-4"
           >
-            <img src={ServiceImg} alt="" className="w-14" />
+            <img src={ServiceImg} alt="Service icon" className="w-14" />
             <p className="uppercase font-semibold text-xl">Learn By doing</p>
             <p className="text-gray-500 pl-6 border-l-2">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -96,7 +98,7 @@ const Services = () => {
             transition={{ duration: 0.5, delay: 0.8 }} // 0.8s delay (fourth)
             className="max-w-[300px] mx-auto space-y-4"
           >
-            <img src={ServiceImg} alt="" className="w-14" />
+            <img src={ServiceImg} alt="Service icon" className="w-14" />
             <p className="uppercase font-semibold text-xl">Learn By doing</p>
             <p className="text-gray-500 pl-6 border-l-2">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.

@@ -20,12 +20,14 @@
  * - Prominent call-to-action button
  */
 
-// eslint-disable-next-line no-unused-vars
 import HeroImg from "../../assets/1.png";
 import { motion } from "framer-motion";
 import { slideUp } from "../../utility/animation";
 
-const Hero = () => {
+/**
+ * Hero Component - Main Landing Section
+ */
+const Hero = (): JSX.Element => {
   return (
     <>
       <div className="container">
@@ -89,7 +91,7 @@ const Hero = () => {
                 delay: 0.5, // Start after 0.5s (coordinates with text animations)
               }}
               src={HeroImg}
-              alt=""
+              alt="Hero illustration showcasing professional growth and development"
               className="w-[90%] md:w-[550px] xl:w-[600px]"
             />
           </div>

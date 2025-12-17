@@ -6,7 +6,7 @@
  * 
  * Configuration:
  * - staleTime: Infinity - Data is considered fresh forever until invalidated
- * - cacheTime: Infinity - Cached data is kept forever
+ * - gcTime: Infinity - Cached data is kept forever (renamed from cacheTime in React Query v5)
  * - refetchOnWindowFocus: false - Don't refetch on window focus (save bandwidth)
  * - refetchOnMount: false - Use cache on mount, don't refetch automatically
  * - refetchOnReconnect: false - Don't refetch on reconnect
@@ -24,7 +24,7 @@ import { QueryClient } from "@tanstack/react-query";
  * 
  * Configured for optimal caching behavior:
  * - Data stays fresh forever (staleTime: Infinity)
- * - Cache persists forever (cacheTime: Infinity)
+ * - Cache persists forever (gcTime: Infinity, renamed from cacheTime in v5)
  * - Manual invalidation triggers refetch only when needed
  */
 export const queryClient = new QueryClient({

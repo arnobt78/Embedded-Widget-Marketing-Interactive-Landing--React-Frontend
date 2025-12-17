@@ -15,12 +15,14 @@
  * - Each banner can have different messaging/styling
  */
 
-// eslint-disable-next-line no-unused-vars
 import BannerImg from "../../assets/4.png";
 import { motion } from "framer-motion";
 import { slideUp } from "../../utility/animation";
 
-const Banner2 = () => {
+/**
+ * Banner2 Component - Secondary Marketing Banner Section
+ */
+const Banner2 = (): JSX.Element => {
   return (
     <>
       <div className="container py-20">
@@ -37,7 +39,7 @@ const Banner2 = () => {
               whileInView={{ opacity: 1, x: 0 }} // Slide to center when visible
               transition={{ duration: 0.5, delay: 0.5 }}
               src={BannerImg}
-              alt=""
+              alt="Technology and innovation illustration"
               className="w-[90%] md:w-[550px] xl:w-[600px] md:!scale-110"
             />
           </div>

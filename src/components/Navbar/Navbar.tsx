@@ -85,7 +85,7 @@ const Navbar = (): JSX.Element => {
       >
         {/* Logo section - Brand identity */}
         <div className="flex items-center gap-1">
-          <img src={Logo} alt="" className="w-[70px]" />
+          <img src={Logo} alt="HUSTLE Logo" className="w-[70px]" />
           <p className="font-bold text-2xl">HUSTLE</p>
         </div>
 
