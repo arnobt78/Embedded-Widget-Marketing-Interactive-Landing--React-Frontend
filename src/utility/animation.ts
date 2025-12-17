@@ -25,6 +25,7 @@ import { Variants } from "framer-motion";
  * 
  * Animates element from bottom (y: 50) to its natural position (y: 0)
  * while fading in from transparent (opacity: 0) to visible (opacity: 1)
+ * Optimized with better easing and GPU acceleration hints
  * 
  * @param {number} delay - Delay in seconds before animation starts (0-1 recommended)
  * @returns {Variants} Framer Motion variant object with initial, animate, and transition
@@ -43,8 +44,17 @@ export const slideUp = (delay: number = 0): Variants => {
       y: 0,         // End at natural position
       opacity: 1,   // End fully visible
       transition: {
-        duration: 0.5,  // Animation takes 0.5 seconds
-        delay: delay,   // Wait specified delay before starting
+        duration: 0.6,      // Slightly longer for smoother animation
+        delay: delay,       // Wait specified delay before starting
+        ease: [0.25, 0.1, 0.25, 1], // Custom cubic-bezier for smooth easing (ease-out)
+        opacity: {
+          duration: 0.4,    // Faster opacity fade
+          ease: "easeOut",
+        },
+        y: {
+          duration: 0.6,
+          ease: [0.25, 0.1, 0.25, 1], // Smooth easing for position
+        },
       },
     },
   };
@@ -55,6 +65,7 @@ export const slideUp = (delay: number = 0): Variants => {
  * 
  * Animates element from top (y: -100) to its natural position (y: 0)
  * while fading in from transparent to visible
+ * Optimized with better easing and GPU acceleration hints
  * 
  * @param {number} delay - Delay in seconds before animation starts (0-1 recommended)
  * @returns {Variants} Framer Motion variant object with initial, animate, and transition
@@ -72,8 +83,17 @@ export const slideBottom = (delay: number = 0): Variants => {
       y: 0,         // End at natural position
       opacity: 1,   // End fully visible
       transition: {
-        duration: 0.5,  // Animation takes 0.5 seconds
-        delay: delay,   // Wait specified delay before starting
+        duration: 0.6,      // Slightly longer for smoother animation
+        delay: delay,       // Wait specified delay before starting
+        ease: [0.25, 0.1, 0.25, 1], // Custom cubic-bezier for smooth easing (ease-out)
+        opacity: {
+          duration: 0.4,    // Faster opacity fade
+          ease: "easeOut",
+        },
+        y: {
+          duration: 0.6,
+          ease: [0.25, 0.1, 0.25, 1], // Smooth easing for position
+        },
       },
     },
   };

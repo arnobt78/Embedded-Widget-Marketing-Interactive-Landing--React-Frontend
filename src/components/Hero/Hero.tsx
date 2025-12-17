@@ -43,6 +43,7 @@ const Hero = (): JSX.Element => {
               variants={slideUp(0.2)}
               initial="initial"
               animate="animate"
+              style={{ willChange: "transform, opacity" }} // GPU acceleration hint
               className="text-4xl xl:text-5xl font-bold"
             >
               Unlock a Passion, Side Hustle, or New{" "}
@@ -56,6 +57,7 @@ const Hero = (): JSX.Element => {
               variants={slideUp(0.5)}
               initial="initial"
               animate="animate"
+              style={{ willChange: "transform, opacity" }} // GPU acceleration hint
             >
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Dignissimos eligendi mollitia{" "}
@@ -67,6 +69,7 @@ const Hero = (): JSX.Element => {
               variants={slideUp(0.8)}
               initial="initial"
               animate="animate"
+              style={{ willChange: "transform, opacity" }} // GPU acceleration hint
               className="primary-btn bg-gray-900 hover:bg-primary duration-300"
             >
               More News
@@ -87,9 +90,19 @@ const Hero = (): JSX.Element => {
                 x: 0, // End at natural position
               }}
               transition={{
-                duration: 0.5, // Animation duration
+                duration: 0.6, // Slightly longer for smoother animation
                 delay: 0.5, // Start after 0.5s (coordinates with text animations)
+                ease: [0.25, 0.1, 0.25, 1], // Smooth easing
+                opacity: {
+                  duration: 0.4,
+                  ease: "easeOut",
+                },
+                x: {
+                  duration: 0.6,
+                  ease: [0.25, 0.1, 0.25, 1],
+                },
               }}
+              style={{ willChange: "transform, opacity" }} // GPU acceleration hint
               src={HeroImg}
               alt="Hero illustration showcasing professional growth and development"
               className="w-[90%] md:w-[550px] xl:w-[600px]"

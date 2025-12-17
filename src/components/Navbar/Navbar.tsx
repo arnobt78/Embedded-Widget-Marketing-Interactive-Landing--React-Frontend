@@ -77,11 +77,17 @@ const Navbar = (): JSX.Element => {
   return (
     <>
       {/* Animated navbar container - slides down from top on page load */}
-      <motion.div
-        variants={slideBottom(0.2)} // Animation variant with 0.2s delay
+      {/* Using will-change and transform for GPU acceleration to prevent flickering */}
+      <motion.nav
+        variants={slideBottom(0)} // Start immediately for navbar (no delay for smooth entry)
         initial="initial" // Start state (hidden, above)
         animate="animate" // End state (visible, in position)
-        className="py-8 container flex justify-between items-center"
+        style={{ 
+          willChange: "transform, opacity",
+          transform: "translateZ(0)", // Force GPU acceleration
+          backfaceVisibility: "hidden", // Prevent flickering
+        }}
+        className="py-8 container flex justify-between items-center relative z-50"
       >
         {/* Logo section - Brand identity (clickable to navigate home) */}
         <Link 
@@ -144,7 +150,7 @@ const Navbar = (): JSX.Element => {
             </Link>
           </motion.div>
         </motion.div>
-      </motion.div>
+      </motion.nav>
     </>
   );
 };

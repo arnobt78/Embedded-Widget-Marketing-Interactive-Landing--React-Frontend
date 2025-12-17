@@ -13,6 +13,19 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* Prevent flickering and improve animation performance */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimize rendering for animated elements */
+[data-framer-motion] {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
 /* Custom animations for dashboard */
 @keyframes pulse-shadow {
   0%, 100% {

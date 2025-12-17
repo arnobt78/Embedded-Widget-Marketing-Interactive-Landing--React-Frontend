@@ -17,9 +17,16 @@ import Email from "../components/Email/Email";
  * 
  * Main landing page with all marketing sections.
  */
+import { motion } from "framer-motion";
+
 export default function Home(): JSX.Element {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      style={{ willChange: "opacity" }}
+    >
       {/* Hero section - main landing area with headline and CTA */}
       <Hero />
 
@@ -37,7 +44,7 @@ export default function Home(): JSX.Element {
 
       {/* Email/Footer section - subscription form and social links */}
       <Email />
-    </>
+    </motion.div>
   );
 }
 
