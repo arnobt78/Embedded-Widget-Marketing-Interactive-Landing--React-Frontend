@@ -18,6 +18,8 @@
  * - Customizable delay per component instance
  */
 
+import { Variants } from "framer-motion";
+
 /**
  * Slide Up Animation
  * 
@@ -25,13 +27,13 @@
  * while fading in from transparent (opacity: 0) to visible (opacity: 1)
  * 
  * @param {number} delay - Delay in seconds before animation starts (0-1 recommended)
- * @returns {Object} Framer Motion variant object with initial, animate, and transition
+ * @returns {Variants} Framer Motion variant object with initial, animate, and transition
  * 
  * @example
  * slideUp(0.2) // Starts animation after 0.2 seconds
  * slideUp(0.5) // Starts animation after 0.5 seconds
  */
-export const slideUp = (delay) => {
+export const slideUp = (delay: number = 0): Variants => {
   return {
     initial: {
       y: 50,        // Start 50px below final position
@@ -55,12 +57,12 @@ export const slideUp = (delay) => {
  * while fading in from transparent to visible
  * 
  * @param {number} delay - Delay in seconds before animation starts (0-1 recommended)
- * @returns {Object} Framer Motion variant object with initial, animate, and transition
+ * @returns {Variants} Framer Motion variant object with initial, animate, and transition
  * 
  * @example
  * slideBottom(0.1) // Common use case for navbar (slides down from top)
  */
-export const slideBottom = (delay) => {
+export const slideBottom = (delay: number = 0): Variants => {
   return {
     initial: {
       y: -100,      // Start 100px above final position (slides down)

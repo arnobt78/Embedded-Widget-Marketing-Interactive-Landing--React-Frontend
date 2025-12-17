@@ -16,7 +16,6 @@
  */
 
 // eslint-disable-next-line no-unused-vars
-import React from "react";
 import ServiceImg from "../../assets/2.png";
 import { motion } from "framer-motion";
 

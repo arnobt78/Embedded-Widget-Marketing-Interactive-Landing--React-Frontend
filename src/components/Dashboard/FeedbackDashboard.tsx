@@ -27,16 +27,29 @@
  */
 
 import { useEffect, useState } from "react";
+import { FeedbackItem } from "../../hooks/useFeedbackQuery";
 
-export default function FeedbackDashboard() {
+/**
+ * Window interface extension for refreshFeedbackDashboard
+ */
+declare global {
+  interface Window {
+    refreshFeedbackDashboard?: () => void;
+  }
+}
+
+/**
+ * FeedbackDashboard Component - Admin Dashboard for Viewing User Feedback
+ */
+export default function FeedbackDashboard(): JSX.Element {
   // State for storing fetched feedback data
-  const [feedbacks, setFeedbacks] = useState([]);
+  const [feedbacks, setFeedbacks] = useState<FeedbackItem[]>([]);
   
   // Loading state to show loading indicator
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
   
   // Error state for displaying error messages
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string>("");
 
   /**
    * useEffect Hook - Fetch feedback on component mount
@@ -57,7 +70,7 @@ export default function FeedbackDashboard() {
      * 6. Handle errors appropriately
      * 7. Always set loading to false (in finally block)
      */
-    async function fetchFeedbacks() {
+    async function fetchFeedbacks(): Promise<void> {
       setLoading(true);    // Show loading indicator
       setError("");        // Clear previous errors
       
@@ -71,13 +84,14 @@ export default function FeedbackDashboard() {
         if (!res.ok) throw new Error("Failed to fetch feedbacks");
         
         // Parse JSON response to JavaScript object
-        const data = await res.json();
+        const data = await res.json() as FeedbackItem[];
         
         // Update state with fetched feedback array
-        setFeedbacks(data);
+        setFeedbacks(Array.isArray(data) ? data : []);
       } catch (err) {
         // Handle errors (network errors, API errors, etc.)
-        setError(err.message);
+        const errorMessage = err instanceof Error ? err.message : "An unknown error occurred";
+        setError(errorMessage);
       } finally {
         // Always hide loading indicator (runs whether success or error)
         setLoading(false);

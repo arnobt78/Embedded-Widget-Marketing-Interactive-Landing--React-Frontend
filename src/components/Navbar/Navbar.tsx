@@ -16,11 +16,19 @@
  * - Mobile: Hides menu links (can be extended with mobile menu toggle)
  */
 
-// eslint-disable-next-line no-unused-vars
-import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "../../assets/1.png";
 import { motion } from "framer-motion";
 import { slideBottom } from "../../utility/animation";
+
+/**
+ * Navigation Link Interface
+ */
+interface NavbarLink {
+  id: number;
+  title: string;
+  link: string;
+}
 
 /**
  * Navigation Links Configuration
@@ -32,7 +40,7 @@ import { slideBottom } from "../../utility/animation";
  *
  * To add/modify links, simply update this array.
  */
-const NavbarLinks = [
+const NavbarLinks: NavbarLink[] = [
   {
     id: 1,
     title: "Home",
@@ -60,7 +68,12 @@ const NavbarLinks = [
   },
 ];
 
-const Navbar = () => {
+/**
+ * Navbar Component
+ * 
+ * Navigation header component with logo, menu links, and dashboard link
+ */
+const Navbar = (): JSX.Element => {
   return (
     <>
       {/* Animated navbar container - slides down from top on page load */}
@@ -96,9 +109,11 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Button section - Call-to-action button */}
+        {/* Button section - Navigation to Dashboard */}
         <div>
-          <button className="primary-btn">Request For Quotes</button>
+          <Link to="/dashboard" className="primary-btn inline-block">
+            User Feedback Dashboard
+          </Link>
         </div>
       </motion.div>
     </>

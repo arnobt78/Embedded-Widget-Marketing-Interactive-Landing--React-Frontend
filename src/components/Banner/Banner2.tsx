@@ -16,7 +16,6 @@
  */
 
 // eslint-disable-next-line no-unused-vars
-import React from "react";
 import BannerImg from "../../assets/4.png";
 import { motion } from "framer-motion";
 import { slideUp } from "../../utility/animation";

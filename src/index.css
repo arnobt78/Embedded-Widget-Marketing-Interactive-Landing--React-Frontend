@@ -12,3 +12,17 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+
+/* Custom animations for dashboard */
+@keyframes pulse-shadow {
+  0%, 100% {
+    box-shadow: 0 0 0px rgba(59, 130, 246, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+}
+
+.animate-pulse-shadow {
+  animation: pulse-shadow 2s ease-in-out infinite;
+}

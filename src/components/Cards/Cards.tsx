@@ -22,7 +22,6 @@
  */
 
 // eslint-disable-next-line no-unused-vars
-import React from "react";
 import Img1 from "../../assets/icon/1.png";
 import Img2 from "../../assets/icon/2.png";
 import Img3 from "../../assets/icon/3.png";

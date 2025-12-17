@@ -19,7 +19,6 @@
  */
 
 // eslint-disable-next-line no-unused-vars
-import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import FooterImg from "../../assets/5.png";
 import { motion } from "framer-motion";

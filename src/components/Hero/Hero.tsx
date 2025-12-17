@@ -21,7 +21,6 @@
  */
 
 // eslint-disable-next-line no-unused-vars
-import React from "react";
 import HeroImg from "../../assets/1.png";
 import { motion } from "framer-motion";
 import { slideUp } from "../../utility/animation";
