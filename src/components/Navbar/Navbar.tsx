@@ -83,11 +83,15 @@ const Navbar = (): JSX.Element => {
         animate="animate" // End state (visible, in position)
         className="py-8 container flex justify-between items-center"
       >
-        {/* Logo section - Brand identity */}
-        <div className="flex items-center gap-1">
+        {/* Logo section - Brand identity (clickable to navigate home) */}
+        <Link 
+          to="/" 
+          className="flex items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+          aria-label="Go to homepage"
+        >
           <img src={Logo} alt="HUSTLE Logo" className="w-[70px]" />
           <p className="font-bold text-2xl">HUSTLE</p>
-        </div>
+        </Link>
 
         {/* Link section - Navigation menu (hidden on mobile, visible on md screens and up) */}
         {/* md:block means display:block at medium breakpoint and above */}
@@ -109,12 +113,37 @@ const Navbar = (): JSX.Element => {
           </ul>
         </div>
 
-        {/* Button section - Navigation to Dashboard */}
-        <div>
-          <Link to="/dashboard" className="primary-btn inline-block">
-            User Feedback Dashboard
-          </Link>
-        </div>
+        {/* Button section - Navigation to Dashboard with animated pulse effects */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3, duration: 0.4 }}
+        >
+          <motion.div
+            animate={{
+              scale: [1, 1.02, 1],
+              boxShadow: [
+                "0 4px 6px -1px rgba(253, 205, 45, 0.3), 0 2px 4px -1px rgba(253, 205, 45, 0.2)",
+                "0 10px 15px -3px rgba(253, 205, 45, 0.4), 0 4px 6px -2px rgba(253, 205, 45, 0.3)",
+                "0 4px 6px -1px rgba(253, 205, 45, 0.3), 0 2px 4px -1px rgba(253, 205, 45, 0.2)",
+              ],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <Link
+              to="/dashboard"
+              className="bg-primary text-black font-semibold py-2.5 px-6 rounded-lg inline-block transition-all duration-200 hover:bg-primary/90 shadow-lg"
+            >
+              User Feedback Dashboard
+            </Link>
+          </motion.div>
+        </motion.div>
       </motion.div>
     </>
   );
