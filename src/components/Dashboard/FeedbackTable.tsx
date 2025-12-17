@@ -335,73 +335,152 @@ export default function FeedbackTable(): JSX.Element {
       transition={{ duration: 0.5 }}
       className="p-6 max-w-7xl mx-auto"
     >
-      {/* Header with animated pulse, shadow, and blinking effects */}
+      {/* Header with enhanced styling, animations, and visual appeal */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        whileHover={{ scale: 1.005 }}
-        className="mb-6 p-6 bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 rounded-xl border-2 border-blue-200 shadow-xl backdrop-blur-sm relative overflow-hidden"
+        className="mb-8 p-8 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-2xl border-2 border-blue-200/50 shadow-2xl backdrop-blur-sm relative overflow-hidden"
       >
         {/* Animated background gradient */}
         <motion.div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-40"
           animate={{
             background: [
-              "linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%)",
-              "linear-gradient(90deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%)",
-              "linear-gradient(90deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%)",
+              "linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(99, 102, 241, 0.15) 50%, rgba(139, 92, 246, 0.15) 100%)",
+              "linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 50%, rgba(59, 130, 246, 0.15) 100%)",
+              "linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(59, 130, 246, 0.15) 50%, rgba(99, 102, 241, 0.15) 100%)",
+              "linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(99, 102, 241, 0.15) 50%, rgba(139, 92, 246, 0.15) 100%)",
             ],
           }}
           transition={{
-            duration: 4,
+            duration: 6,
             repeat: Infinity,
-            repeatType: "reverse",
             ease: "easeInOut",
           }}
         />
+        
+        {/* Decorative circles */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl -mr-32 -mt-32" />
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-400/10 rounded-full blur-3xl -ml-24 -mb-24" />
+        
         <div className="relative z-10">
-          <motion.h2
-            animate={{
-              textShadow: [
-                "0 0 0px rgba(59, 130, 246, 0)",
-                "0 0 10px rgba(59, 130, 246, 0.5)",
-                "0 0 0px rgba(59, 130, 246, 0)",
-              ],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-            className="text-4xl font-bold bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 bg-clip-text text-transparent mb-2"
-          >
-            User Feedback Dashboard
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-gray-600 text-lg mb-4"
-          >
-            View and manage user feedback submissions
-          </motion.p>
+          {/* Title Section */}
+          <div className="mb-6">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="flex items-center gap-3 mb-3"
+            >
+              <motion.div
+                animate={{
+                  scale: [1, 1.1, 1],
+                  rotate: [0, 5, -5, 0],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg"
+              >
+                <Search className="w-6 h-6 text-white" />
+              </motion.div>
+              <motion.h2
+                animate={{
+                  textShadow: [
+                    "0 0 0px rgba(59, 130, 246, 0)",
+                    "0 0 15px rgba(59, 130, 246, 0.4), 0 0 25px rgba(99, 102, 241, 0.2)",
+                    "0 0 0px rgba(59, 130, 246, 0)",
+                  ],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+                className="text-5xl font-extrabold bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent"
+              >
+                User Feedback Dashboard
+              </motion.h2>
+            </motion.div>
+            
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-gray-700 text-xl font-medium ml-16 flex items-center gap-2"
+            >
+              <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+              View and manage user feedback submissions
+            </motion.p>
+          </div>
 
-          {/* Search Input with Animation */}
+          {/* Enhanced Search Input with better styling */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.4 }}
-            className="relative max-w-md"
+            transition={{ delay: 0.3, duration: 0.4 }}
+            className="relative max-w-2xl ml-16"
           >
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 transition-colors group-hover:text-blue-500" />
-            <input
-              type="text"
-              placeholder="Search by name, email, or message..."
-              value={searchInput}
-              onChange={(e) => setSearchInput(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-300 rounded-lg bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-gray-400 shadow-sm hover:shadow-md"
-            />
+            <motion.div
+              whileHover={{ scale: 1.01 }}
+              whileFocus={{ scale: 1.01 }}
+              className="relative group"
+            >
+              {/* Search icon with animation */}
+              <motion.div
+                animate={{
+                  scale: [1, 1.1, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10"
+              >
+                <Search className="w-6 h-6 text-blue-500 group-hover:text-blue-600 transition-colors" />
+              </motion.div>
+              
+              {/* Enhanced input field */}
+              <input
+                type="text"
+                placeholder="Search by name, email, or message..."
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+                className="w-full pl-14 pr-6 py-4 text-lg border-2 border-blue-300/50 rounded-xl bg-white/95 backdrop-blur-md focus:outline-none focus:ring-4 focus:ring-blue-500/30 focus:border-blue-500 transition-all duration-300 hover:border-blue-400 hover:shadow-xl shadow-lg hover:shadow-blue-500/20 placeholder:text-gray-400"
+              />
+              
+              {/* Glowing effect on focus */}
+              <motion.div
+                className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-blue-500/0 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 pointer-events-none"
+                animate={{
+                  x: ["-100%", "100%"],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  ease: "linear",
+                }}
+              />
+              
+              {/* Instant search indicator */}
+              {searchInput && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2"
+                >
+                  <div className="flex items-center gap-2 px-3 py-1 bg-blue-100 rounded-full">
+                    <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+                    <span className="text-xs font-semibold text-blue-700">Searching...</span>
+                  </div>
+                </motion.div>
+              )}
+            </motion.div>
           </motion.div>
         </div>
       </motion.div>
