@@ -22,7 +22,6 @@
 
 import HeroImg from "../../assets/1.png";
 import { motion } from "framer-motion";
-import { slideUp } from "../../utility/animation";
 
 /**
  * Hero Component - Main Landing Section
@@ -37,13 +36,16 @@ const Hero = (): JSX.Element => {
           {/* Text content section - Left side on desktop, top on mobile */}
           {/* Responsive text alignment: center on mobile, left on desktop */}
           <div className="space-y-5 flex flex-col justify-center items-center text-center md:text-left py-20 px-10 md:pr-24 md:py-0 md:px-0 md:items-start">
-            {/* Main headline with staggered animation */}
-            {/* delay: 0.2s - appears first */}
+            {/* Main headline with simple fade in */}
             <motion.h1
-              variants={slideUp(0.2)}
-              initial="initial"
-              animate="animate"
-              style={{ willChange: "transform, opacity" }} // GPU acceleration hint
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.1,
+                ease: "easeOut",
+              }}
+              style={{ opacity: 0 }}
               className="text-4xl xl:text-5xl font-bold"
             >
               Unlock a Passion, Side Hustle, or New{" "}
@@ -51,25 +53,31 @@ const Hero = (): JSX.Element => {
               <span className="text-gray-400 underline">Profession</span>
             </motion.h1>
 
-            {/* Supporting text with later animation */}
-            {/* delay: 0.5s - appears after headline */}
+            {/* Supporting text with simple fade in */}
             <motion.p
-              variants={slideUp(0.5)}
-              initial="initial"
-              animate="animate"
-              style={{ willChange: "transform, opacity" }} // GPU acceleration hint
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.2,
+                ease: "easeOut",
+              }}
+              style={{ opacity: 0 }}
             >
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Dignissimos eligendi mollitia{" "}
             </motion.p>
 
-            {/* Call-to-action button with latest animation */}
-            {/* delay: 0.8s - appears last, draws attention */}
+            {/* Call-to-action button with simple fade in */}
             <motion.button
-              variants={slideUp(0.8)}
-              initial="initial"
-              animate="animate"
-              style={{ willChange: "transform, opacity" }} // GPU acceleration hint
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.3,
+                ease: "easeOut",
+              }}
+              style={{ opacity: 0 }}
               className="primary-btn bg-gray-900 hover:bg-primary duration-300"
             >
               More News
@@ -78,31 +86,16 @@ const Hero = (): JSX.Element => {
 
           {/* Hero Image section - Right side on desktop, bottom on mobile */}
           <div className="flex justify-center items-center">
-            {/* Image with custom animation (slides in from right) */}
-            {/* Inline animation config (not using variant for custom behavior) */}
+            {/* Image with simple fade in and slide */}
             <motion.img
-              initial={{
-                opacity: 0, // Start invisible
-                x: 100, // Start 100px to the right
-              }}
-              animate={{
-                opacity: 1, // End visible
-                x: 0, // End at natural position
-              }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{
-                duration: 0.6, // Slightly longer for smoother animation
-                delay: 0.5, // Start after 0.5s (coordinates with text animations)
-                ease: [0.25, 0.1, 0.25, 1], // Smooth easing
-                opacity: {
-                  duration: 0.4,
-                  ease: "easeOut",
-                },
-                x: {
-                  duration: 0.6,
-                  ease: [0.25, 0.1, 0.25, 1],
-                },
+                duration: 0.6,
+                delay: 0.2,
+                ease: "easeOut",
               }}
-              style={{ willChange: "transform, opacity" }} // GPU acceleration hint
+              style={{ opacity: 0 }}
               src={HeroImg}
               alt="Hero illustration showcasing professional growth and development"
               className="w-[90%] md:w-[550px] xl:w-[600px]"

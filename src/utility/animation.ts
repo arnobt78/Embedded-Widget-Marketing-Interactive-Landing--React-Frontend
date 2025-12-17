@@ -44,16 +44,16 @@ export const slideUp = (delay: number = 0): Variants => {
       y: 0,         // End at natural position
       opacity: 1,   // End fully visible
       transition: {
-        duration: 0.6,      // Slightly longer for smoother animation
+        duration: 0.5,      // Optimized duration for smooth but fast animation
         delay: delay,       // Wait specified delay before starting
-        ease: [0.25, 0.1, 0.25, 1], // Custom cubic-bezier for smooth easing (ease-out)
+        ease: [0.25, 0.46, 0.45, 0.94], // Optimized easing curve for smoother feel
         opacity: {
-          duration: 0.4,    // Faster opacity fade
+          duration: 0.3,    // Faster opacity fade for instant visibility
           ease: "easeOut",
         },
         y: {
-          duration: 0.6,
-          ease: [0.25, 0.1, 0.25, 1], // Smooth easing for position
+          duration: 0.5,
+          ease: [0.25, 0.46, 0.45, 0.94], // Smooth easing for position
         },
       },
     },
@@ -83,16 +83,16 @@ export const slideBottom = (delay: number = 0): Variants => {
       y: 0,         // End at natural position
       opacity: 1,   // End fully visible
       transition: {
-        duration: 0.6,      // Slightly longer for smoother animation
+        duration: 0.5,      // Optimized duration for smooth but fast animation
         delay: delay,       // Wait specified delay before starting
-        ease: [0.25, 0.1, 0.25, 1], // Custom cubic-bezier for smooth easing (ease-out)
+        ease: [0.25, 0.46, 0.45, 0.94], // Optimized easing curve for smoother feel
         opacity: {
-          duration: 0.4,    // Faster opacity fade
+          duration: 0.3,    // Faster opacity fade for instant visibility
           ease: "easeOut",
         },
         y: {
-          duration: 0.6,
-          ease: [0.25, 0.1, 0.25, 1], // Smooth easing for position
+          duration: 0.5,
+          ease: [0.25, 0.46, 0.45, 0.94], // Smooth easing for position
         },
       },
     },

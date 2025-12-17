@@ -19,7 +19,6 @@
 import { Link } from "react-router-dom";
 import Logo from "../../assets/1.png";
 import { motion } from "framer-motion";
-import { slideBottom } from "../../utility/animation";
 
 /**
  * Navigation Link Interface
@@ -76,17 +75,15 @@ const NavbarLinks: NavbarLink[] = [
 const Navbar = (): JSX.Element => {
   return (
     <>
-      {/* Animated navbar container - slides down from top on page load */}
-      {/* Using will-change and transform for GPU acceleration to prevent flickering */}
+      {/* Animated navbar container - simple fade in with smooth slide */}
       <motion.nav
-        variants={slideBottom(0)} // Start immediately for navbar (no delay for smooth entry)
-        initial="initial" // Start state (hidden, above)
-        animate="animate" // End state (visible, in position)
-        style={{ 
-          willChange: "transform, opacity",
-          transform: "translateZ(0)", // Force GPU acceleration
-          backfaceVisibility: "hidden", // Prevent flickering
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ 
+          duration: 0.5,
+          ease: "easeOut"
         }}
+        style={{ opacity: 0 }}
         className="py-8 container flex justify-between items-center relative z-50"
       >
         {/* Logo section - Brand identity (clickable to navigate home) */}
@@ -121,9 +118,9 @@ const Navbar = (): JSX.Element => {
 
         {/* Button section - Navigation to Dashboard with animated pulse effects */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3, duration: 0.4 }}
+          transition={{ delay: 0.2, duration: 0.4, ease: "easeOut" }}
+          style={{ opacity: 0 }}
         >
           <motion.div
             animate={{
@@ -146,10 +143,10 @@ const Navbar = (): JSX.Element => {
               to="/dashboard"
               className="bg-primary text-black font-semibold py-2.5 px-6 rounded-lg inline-block transition-all duration-200 hover:bg-primary/90 shadow-lg"
             >
-              User Feedback Dashboard
-            </Link>
+            User Feedback Dashboard
+          </Link>
           </motion.div>
-        </motion.div>
+      </motion.div>
       </motion.nav>
     </>
   );

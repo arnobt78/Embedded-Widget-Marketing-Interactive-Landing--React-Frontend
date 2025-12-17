@@ -19,12 +19,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Optimize rendering for animated elements */
-[data-framer-motion] {
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
+/* No CSS hiding - Framer Motion handles initial states via initial prop */
 
 /* Custom animations for dashboard */
 @keyframes pulse-shadow {
