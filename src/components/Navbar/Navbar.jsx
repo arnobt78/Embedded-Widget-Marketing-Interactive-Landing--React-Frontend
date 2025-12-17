@@ -1,8 +1,37 @@
+/**
+ * Navbar Component - Navigation Header
+ *
+ * Displays the main navigation bar with logo, menu links, and CTA button.
+ * Uses Framer Motion for smooth slide-down animation on page load.
+ *
+ * Features:
+ * - Responsive design (menu hidden on mobile with md:block)
+ * - Animated entrance using slideBottom animation
+ * - Logo and brand name
+ * - Navigation links array (easily customizable)
+ * - Call-to-action button
+ *
+ * Responsive Behavior:
+ * - Desktop (md and up): Shows full menu with links
+ * - Mobile: Hides menu links (can be extended with mobile menu toggle)
+ */
+
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import Logo from "../../assets/1.png";
 import { motion } from "framer-motion";
 import { slideBottom } from "../../utility/animation";
 
+/**
+ * Navigation Links Configuration
+ *
+ * Array of navigation menu items. Each item contains:
+ * - id: Unique identifier for React keys
+ * - title: Display text for the link
+ * - link: URL path or anchor (# for same-page sections)
+ *
+ * To add/modify links, simply update this array.
+ */
 const NavbarLinks = [
   {
     id: 1,
@@ -30,23 +59,28 @@ const NavbarLinks = [
     link: "#",
   },
 ];
+
 const Navbar = () => {
   return (
     <>
+      {/* Animated navbar container - slides down from top on page load */}
       <motion.div
-        variants={slideBottom(0.2)}
-        initial="initial"
-        animate="animate"
+        variants={slideBottom(0.2)} // Animation variant with 0.2s delay
+        initial="initial" // Start state (hidden, above)
+        animate="animate" // End state (visible, in position)
         className="py-8 container flex justify-between items-center"
       >
-        {/* Logo section */}
+        {/* Logo section - Brand identity */}
         <div className="flex items-center gap-1">
           <img src={Logo} alt="" className="w-[70px]" />
           <p className="font-bold text-2xl">HUSTLE</p>
         </div>
-        {/* Link section */}
+
+        {/* Link section - Navigation menu (hidden on mobile, visible on md screens and up) */}
+        {/* md:block means display:block at medium breakpoint and above */}
         <div className="hidden md:block">
           <ul className="flex gap-3 xl:gap-7">
+            {/* Map through NavbarLinks array to render navigation items */}
             {NavbarLinks.map((link) => {
               return (
                 <li key={link.id}>
@@ -61,7 +95,8 @@ const Navbar = () => {
             })}
           </ul>
         </div>
-        {/* Button section */}
+
+        {/* Button section - Call-to-action button */}
         <div>
           <button className="primary-btn">Request For Quotes</button>
         </div>
