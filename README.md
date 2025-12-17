@@ -125,9 +125,9 @@ You can embed the feedback widget into any HTML page (including this project) wi
 <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <!-- Include the widget script from your Vercel deployment -->
-<script src="https://widget-feedback-next.vercel.app/widget.umd.js"></script>
+<script src="https://embedded-feedback.vercel.app/widget.umd.js"></script>
 <my-widget
-  api-base="https://widget-feedback-next.vercel.app/api/feedback"
+  api-base="https://embedded-feedback.vercel.app/api/feedback"
 ></my-widget>
 ```
 
