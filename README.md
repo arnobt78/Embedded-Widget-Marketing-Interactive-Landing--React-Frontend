@@ -2,7 +2,7 @@
 
 A modern, production-ready, static React landing page template built with Vite, TailwindCSS, and a fully integrated feedback widget powered by Next.js, Prisma, and Vercel. Easily customizable and deployable, this project demonstrates best practices for building, styling, and extending React apps with real-world features.
 
-- **Live Demo:** [https://marketing-arnob.netlify.app](https://marketing-arnob.netlify.app)
+- **Live Demo:** [https://embedded-marketing.netlify.app/](https://embedded-marketing.netlify.app/)
 
 - _Note: The feedback widget is integrated from: [Feedback-Widget](https://github.com/arnobt78/Embedded-Feedback-Collector-Widget--NextJS-FullStack)_
 
