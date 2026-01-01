@@ -1,14 +1,12 @@
 # Marketing Template - TailwindCSS Fundamental Project 2
 
-![Screenshots](https://github.com/user-attachments/assets/b2278b37-2816-4221-bf54-c67b599ae35b)
-
----
-
 A modern, production-ready, static React landing page template built with Vite, TailwindCSS, and a fully integrated feedback widget powered by Next.js, Prisma, and Vercel. Easily customizable and deployable, this project demonstrates best practices for building, styling, and extending React apps with real-world features.
 
 - **Live Demo:** [https://marketing-arnob.netlify.app](https://marketing-arnob.netlify.app)
 
 - _Note: The feedback widget is integrated from: [Feedback-Widget--NextJS](https://github.com/arnobt78/Feedback-Widget--NextJS)_
+
+![Screenshots](https://github.com/user-attachments/assets/b2278b37-2816-4221-bf54-c67b599ae35b)
 
 ---
 
