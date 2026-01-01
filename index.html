@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marketing Tailwind Templates</title>
+    <title>Embedded Marketing</title>
   </head>
   <body>
     <div id="root"></div>
     <!-- Load React and ReactDOM UMD builds for the widget -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <!-- Include the widget script from Vercel -->
-    <script src="https://widget-feedback-next.vercel.app/widget.umd.js"></script>
+    <!-- Include the widget script from production (Vercel) -->
+    <script src="https://embedded-feedback.vercel.app/widget.umd.js"></script>
     <my-widget
-      api-base="https://widget-feedback-next.vercel.app/api/feedback"
+      api-base="https://embedded-feedback.vercel.app/api/feedback"
     ></my-widget>
     <script type="module" src="/src/main.jsx"></script>
   </body>

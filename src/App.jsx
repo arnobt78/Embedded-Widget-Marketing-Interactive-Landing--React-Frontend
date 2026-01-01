@@ -5,7 +5,6 @@ import Banner from "./components/Banner/Banner";
 import Cards from "./components/Cards/Cards";
 import Banner2 from "./components/Banner/Banner2";
 import Email from "./components/Email/Email";
-import FeedbackDashboard from "./components/Dashboard/FeedbackDashboard";
 
 const App = () => {
   return (
@@ -17,8 +16,6 @@ const App = () => {
       <Cards />
       <Banner2 />
       <Email />
-      {/* Feedback Dashboard (for admin view, move as needed) */}
-      <FeedbackDashboard />
     </main>
   );
 };
