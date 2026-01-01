@@ -4,7 +4,7 @@ A modern, production-ready, static React landing page template built with Vite, 
 
 - **Live Demo:** [https://marketing-arnob.netlify.app](https://marketing-arnob.netlify.app)
 
-- _Note: The feedback widget is integrated from: [Feedback-Widget--NextJS](https://github.com/arnobt78/Feedback-Widget--NextJS)_
+- _Note: The feedback widget is integrated from: [Feedback-Widget](https://github.com/arnobt78/Embedded-Feedback-Collector-Widget--NextJS-FullStack)_
 
 ![Screenshots](https://github.com/user-attachments/assets/b2278b37-2816-4221-bf54-c67b599ae35b)
 
