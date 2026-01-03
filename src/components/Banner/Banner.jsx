@@ -1,4 +1,14 @@
-import React from "react";
+/**
+ * Banner Component
+ * 
+ * First promotional banner section featuring:
+ * - Large headline with design philosophy quote
+ * - CTA button
+ * - Two feature highlights (Design Tools & Experiences)
+ * - Large banner image with scale effect
+ * - Scroll-triggered animations using whileInView
+ */
+
 import BannerImg from "../../assets/3.png";
 import { motion } from "framer-motion";
 import { slideUp } from "../../utility/animation";
@@ -7,9 +17,15 @@ const Banner = () => {
   return (
     <>
       <div className="container py-20">
+        {/* Two-column grid layout (stacks on mobile) */}
         <div className="grid grid-cols-1 md:grid-cols-2 min-h-[700px] md:min-h-[600px]">
           {/* Text content section */}
           <div className="space-y-8 flex flex-col justify-center items-center text-center md:text-left py-20 px-10 md:pr-10 md:py-0 md:px-0 md:items-start">
+            {/* 
+              Main headline
+              - whileInView: Animates when scrolled into viewport
+              - text-black/80: 80% opacity black text
+            */}
             <motion.h1
               variants={slideUp(0.2)}
               initial="initial"
@@ -20,6 +36,8 @@ const Banner = () => {
               <br />
               <span className="text-gray-400 underline">It Works</span>
             </motion.h1>
+            
+            {/* CTA Button with hover effects */}
             <motion.button
               variants={slideUp(0.4)}
               initial="initial"
@@ -28,7 +46,10 @@ const Banner = () => {
             >
               More News
             </motion.button>
+            
+            {/* Feature highlights - side by side */}
             <div className="flex gap-3">
+              {/* Feature 1: Design Tools */}
               <motion.div
                 variants={slideUp(0.6)}
                 initial="initial"
@@ -38,6 +59,8 @@ const Banner = () => {
                 <p className="font-semibold text-lg">Design Tools</p>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit</p>
               </motion.div>
+              
+              {/* Feature 2: Experiences */}
               <motion.div
                 variants={slideUp(0.8)}
                 initial="initial"
@@ -49,14 +72,20 @@ const Banner = () => {
               </motion.div>
             </div>
           </div>
+          
           {/* Banner Image section */}
           <div className="flex justify-center items-center">
+            {/* 
+              Image with slide-in animation
+              - md:!scale-125: Scales image to 125% on medium+ screens
+              - The ! makes it important to override other scale utilities
+            */}
             <motion.img
               initial={{
                 opacity: 0,
-                x: 100,
+                x: 100,  // Start 100px to the right
               }}
-              whileInView={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}  // Animate when in viewport
               transition={{ duration: 0.5, delay: 0.5 }}
               src={BannerImg}
               alt=""
