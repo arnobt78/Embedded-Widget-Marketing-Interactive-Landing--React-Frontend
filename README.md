@@ -9,7 +9,9 @@ A modern, production-ready, static React landing page template built with **Vite
 **Feedback Widget Live URL:** [https://embedded-feedback.vercel.app/auth/signin](https://embedded-feedback.vercel.app/auth/signin)
 
 ![Project Screenshot](https://github.com/user-attachments/assets/b2278b37-2816-4221-bf54-c67b599ae35b)
-<img width="1727" height="939" alt="Screenshot 2026-01-03 at 14 21 49" src="https://github.com/user-attachments/assets/8dab9eac-ccf2-40bd-b752-4c4501e3fb79" /> <img width="1648" height="955" alt="Screenshot 2026-01-03 at 14 22 21" src="https://github.com/user-attachments/assets/c6ab5929-6dd4-4972-b8c0-6ba423cd77b9" /> <img width="1900" height="947" alt="Screenshot 2026-01-03 at 14 22 40" src="https://github.com/user-attachments/assets/cf84bc5f-d630-4c7f-ae02-04b98bc79e6d" />
+![Screenshot 2026-01-03 at 14 21 49](https://github.com/user-attachments/assets/8dab9eac-ccf2-40bd-b752-4c4501e3fb79)
+![Screenshot 2026-01-03 at 14 22 21](https://github.com/user-attachments/assets/c6ab5929-6dd4-4972-b8c0-6ba423cd77b9)
+![Screenshot 2026-01-03 at 14 22 40](https://github.com/user-attachments/assets/cf84bc5f-d630-4c7f-ae02-04b98bc79e6d)
 
 ## Table of Contents
 
